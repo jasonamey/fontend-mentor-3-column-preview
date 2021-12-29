@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap");
+
+@import "reset";
+@import "variables";
+
+body {
+  font-family: "Lexend Deca", sans-serif;
+  box-sizing: border-box;
+  background-color: $very-light-gray;
+
+  position: relative;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  max-width: 390px;
+  width: 90%;
+  margin: 0 auto;
+  padding-block: 60px;
+}
+
+article {
+  min-width: 330px;
+  padding: 40px 43px;
+  color: $transparent-white-paragraphs;
+  img {
+    width: 60px;
+  }
+  h2 {
+    font-family: "Big Shoulders Display", cursive;
+    font-size: 35px;
+    margin-block-start: 34px;
+    text-transform: uppercase;
+    color: $very-light-gray;
+  }
+  p {
+    font-size: 13px;
+    line-height: 1.7;
+    margin-block-start: 26px;
+  }
+  button {
+    display: block;
+    font-family: inherit;
+    background-color: $very-light-gray;
+    border: none;
+    outline: none;
+    margin-block-start: 70px;
+    border-radius: 30px;
+    padding: 13px 30px;
+    font-size: 13px;
+  }
+
+  &.sedan {
+    background-color: $bright-orange;
+    button {
+      color: $bright-orange;
+    }
+  }
+  &.suv {
+    background-color: $dark-cyan;
+    button {
+      color: $dark-cyan;
+    }
+  }
+  &.luxury {
+    background-color: $very-dark-cyan;
+    button {
+      color: $very-dark-cyan;
+    }
+  }
+  &:first-child {
+    border-top-left-radius: $article-radius;
+    border-top-right-radius: $article-radius;
+  }
+  &:last-child {
+    border-bottom-left-radius: $article-radius;
+    border-bottom-right-radius: $article-radius;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  main {
+    flex-direction: row;
+    justify-content: center;
+    padding-block: 0;
+  }
+
+  article {
+    max-width: 276px;
+    &:first-child {
+      border-bottom-left-radius: $article-radius;
+      border-top-right-radius: 0;
+    }
+    &:last-child {
+      border-top-right-radius: $article-radius;
+      border-bottom-left-radius: 0;
+    }
+  }
+}
